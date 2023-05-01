@@ -1,12 +1,15 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import PopularChef from '../PopularChef/PopularChef';
+ 
+import WorldChef from '../WorldChef/WorldChef';
+import Popular from '../Popular/Popular';
 
 const Home = () => {
      return (
           <div>
                <Banner></Banner>
-               <PopularChef></PopularChef>
+                <WorldChef></WorldChef>
+                <Popular></Popular>
           </div>
      );
 };
