@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+ 
 
 const Login = () => {
      const location = useLocation()
      const from = location?.state?.from?.pathname || '/'
-     const {loginUser} = useContext(AuthContext)
+     const {loginUser, googles,} = useContext(AuthContext)
      const navigate = useNavigate()
      const handelLogin=(event)=>{
           event.preventDefault();
@@ -24,7 +25,7 @@ const Login = () => {
           })
      }
   return (
-    <div className="w-[600px] mt-10 mx-auto mb-80">
+    <div className="w-[600px] mt-10 mx-auto mb-80 border border-spacing-1 p-4">
      <h2 className="text-center text-3xl font-bold">Please Log-In</h2>
       <form onSubmit={handelLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
@@ -62,7 +63,12 @@ const Login = () => {
             Register
           </Link>
         </p>
+        
       </form>
+      <div className="flex justify-evenly">
+          <button className="btn btn-info" onClick={()=> googles()}> SingIn Google</button>
+          <button className="btn btn-info">SingIn Github </button>
+      </div>
     </div>
   );
 };

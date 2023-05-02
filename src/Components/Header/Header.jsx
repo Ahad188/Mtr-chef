@@ -30,7 +30,7 @@ const Header = () => {
 
                          <div>
                     {user &&
-                         <h4>{user.name}</h4>
+                         <h4>{user.displayName}</h4>
                          }
                    </div>
                     </nav>
