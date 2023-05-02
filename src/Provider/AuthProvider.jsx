@@ -22,12 +22,7 @@ const AuthProvider = ({children}) => {
      }
      const googles =()=>{
           return signInWithPopup(auth,googleProvider)
-          .then(result=>{
-               const guser = result.user;
-               console.log(guser);
-               setUser(guser)
-          })
-          .catch(err=>console.log(err))
+          
      }
      const logOut =()=>{
           setLoading(true)

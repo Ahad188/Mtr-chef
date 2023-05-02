@@ -24,6 +24,16 @@ const Login = () => {
                console.log(err);
           })
      }
+     const singGoogle = ()=>{
+          googles()
+          .then(result=>{
+               const guser = result.user;
+               console.log(guser);
+               navigate(from,{replace:true})
+               setUser(guser)
+          })
+          .catch(err=>console.log(err))
+     }
   return (
     <div className="w-[600px] mt-10 mx-auto mb-80 border border-spacing-1 p-4">
      <h2 className="text-center text-3xl font-bold">Please Log-In</h2>
@@ -66,7 +76,7 @@ const Login = () => {
         
       </form>
       <div className="flex justify-evenly">
-          <button className="btn btn-info" onClick={()=> googles()}> SingIn Google</button>
+          <button className="btn btn-info" onClick={singGoogle }> SingIn Google</button>
           <button className="btn btn-info">SingIn Github </button>
       </div>
     </div>

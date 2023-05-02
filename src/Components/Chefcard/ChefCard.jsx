@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const ChefCard = ({ card }) => {
      const { chefName,experience,id,likes,chefPicture}= card;
-     // const navigate = useNavigate()
+     const navigate = useNavigate()
 //   console.log(card);
   return (
     <div className="card card-side bg-base-100 w-[650px] shadow-xl">
@@ -17,7 +17,7 @@ const ChefCard = ({ card }) => {
           <h4>Likes: <span className="text-yellow-300">{likes}</span></h4>
          </div>
         <div className="justify-end">
-          <button className="btn text-yellow-400" title="Details chef here"> 
+          <button className="btn text-yellow-400" onClick={()=>navigate(`/card/${id}`)} title="Details chef here"> 
           <Link to={`/card`}>Details</Link>
           </button>
         </div>

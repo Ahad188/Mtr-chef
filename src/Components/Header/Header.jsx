@@ -30,7 +30,9 @@ const Header = () => {
 
                          <div>
                     {user &&
-                         <h4>{user.displayName}</h4>
+                         <h4>{user?.displayName}</h4>
+                         //  <img src={user.photoURL} alt="" />
+                         
                          }
                    </div>
                     </nav>
