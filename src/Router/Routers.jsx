@@ -4,6 +4,8 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import Blog from "../Components/Blog/Blog";
+import Allchef from "../Components/Allchef/Allchef";
+import Card from "../Components/Card/Card";
 
 const router = createBrowserRouter([
      {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
                {
                     path:'/register',
                     element:<Register></Register>
+               },
+               {
+                    path:'/all-chef',
+                    element:<Allchef></Allchef>,
+               }
+               ,{
+                    path:'/card',
+                    element:<Card></Card>
                }
           ]
      },
