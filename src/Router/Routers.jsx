@@ -34,7 +34,7 @@ const router = createBrowserRouter([
                }
                ,{
                     path:'/card',
-                    element:<Card></Card>
+                    element:<Card></Card>,
                }
           ]
      },

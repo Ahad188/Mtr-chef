@@ -10,7 +10,7 @@ const Popular = () => {
           .then(res=>res.json())
           .then(data=>setData(data))
      },[])
-     console.log(data);
+     // console.log(data);
      return (
           <section className='mt-10 container px-14 border mx-auto'>
                <h2 className='text-center text-yellow-300 text-5xl mb-14 mt-5'> Our chef</h2>

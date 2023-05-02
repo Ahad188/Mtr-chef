@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+     const {loginUser} = useContext(AuthContext)
+     const handelLogin=(event)=>{
+          event.preventDefault();
+          const form = event.target;
+          const email = form.email.value;
+          const password = form.password.value;
+          console.log(email, password);
+          loginUser(email,password)
+          .then(result=>{
+               const loguser = result.user
+               console.log(loguser);
+          })
+          .catch(err=>{
+               console.log(err);
+          })
+     }
   return (
     <div className="w-[600px] mt-10 mx-auto mb-80">
      <h2 className="text-center text-3xl font-bold">Please Log-In</h2>
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form onSubmit={handelLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 text-xl font-bold mb-2" forhtml="email">
             UserEmail:
@@ -29,12 +46,8 @@ const Login = () => {
           />
         </div>
         <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Sign In
-          </button>
+          <input type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" value="sing In" />
+          
            
         </div>
         <p className="italic text-center text-xl mt-5">
