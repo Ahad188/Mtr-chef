@@ -6,6 +6,8 @@ import Register from "../Components/Register/Register";
 import Blog from "../Components/Blog/Blog";
 import Allchef from "../Components/Allchef/Allchef";
 import Card from "../Components/Card/Card";
+ 
+import Proctet from "../Proctet/Proctet";
 
 const router = createBrowserRouter([
      {
@@ -34,7 +36,8 @@ const router = createBrowserRouter([
                }
                ,{
                     path:'/card',
-                    element:<Card></Card>,
+                    element:<Proctet><Card></Card></Proctet>,
+                    
                }
           ]
      },

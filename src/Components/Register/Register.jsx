@@ -42,6 +42,7 @@ const Register = () => {
             id="name"
             type="text"
             placeholder="Name"
+            required
           />
         </div>
         <div className="mb-4">
@@ -53,6 +54,7 @@ const Register = () => {
             id="photo"
             type="text"
             placeholder="Photo"
+            required
           />
         </div>
         <div className="mb-4">
@@ -64,6 +66,7 @@ const Register = () => {
             id="email"
             type="text"
             placeholder="Email"
+            required
           />
         </div>
         <div className="mb-6">
@@ -75,6 +78,7 @@ const Register = () => {
             id="password"
             type="password"
             placeholder="******************"
+            required
           />
         </div>
         <div className="flex items-center justify-between">

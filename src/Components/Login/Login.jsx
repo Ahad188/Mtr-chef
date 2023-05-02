@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+     const location = useLocation()
+     const from = location?.state?.from?.pathname || '/'
      const {loginUser} = useContext(AuthContext)
      const navigate = useNavigate()
      const handelLogin=(event)=>{
@@ -15,7 +17,7 @@ const Login = () => {
           .then(result=>{
                const loguser = result.user
                console.log(loguser);
-               navigate('/')
+               navigate(from,{replace:true})
           })
           .catch(err=>{
                console.log(err);
@@ -34,6 +36,7 @@ const Login = () => {
             id="email"
             type="text"
             placeholder="Email"
+            required
           />
         </div>
         <div className="mb-6">
@@ -45,6 +48,7 @@ const Login = () => {
             id="password"
             type="password"
             placeholder="******************"
+            required
           />
         </div>
         <div className="flex items-center justify-between">
