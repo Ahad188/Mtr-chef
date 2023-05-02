@@ -17,7 +17,7 @@ const ChefCard = ({ card }) => {
           <h4>Likes: <span className="text-yellow-300">{likes}</span></h4>
          </div>
         <div className="justify-end">
-          <button className="btn text-yellow-400" onClick={()=>navigate(`data/${id}`)} title="Details chef here"> 
+          <button className="btn text-yellow-400"   title="Details chef here"> 
           <Link to='/card'>Details</Link>
           </button>
         </div>
