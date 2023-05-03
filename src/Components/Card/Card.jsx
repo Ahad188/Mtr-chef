@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FaRegGem } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FoodCard from "../FoodCard/FoodCard";
 const Card = () => {
   const { id } = useParams();
-
+     const food = useLoaderData()
+     // console.log(food);
   const [chef, setChef] = useState([]);
   //  console.log(typeof id,id);
   useEffect(() => {
@@ -42,7 +44,7 @@ const Card = () => {
 
                <h1 className="text-4xl mt-4 mb-2">Most Popular Food </h1>
                {
-                    p?.map(p1=> <li key={p1.index}>{p1}</li>)
+                    p?.map((p1,index)=> <li key={index}>{p1}</li>)
                }
            </div>
           <div className="card-actions justify-end">
@@ -53,6 +55,14 @@ const Card = () => {
           <FaRegGem onClick={favorite} className="text-3xl mr-10 mt-10"/>
           <ToastContainer></ToastContainer>
         </h3>
+      </div>
+      <div className="md:grid grid-cols-3 mt-5">
+     {
+          food.map((f1,index)=><FoodCard
+          key={index}
+          f1={f1}
+          ></FoodCard>)
+     }
       </div>
     </div>
   );
