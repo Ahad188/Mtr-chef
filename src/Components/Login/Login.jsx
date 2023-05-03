@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
      const location = useLocation()
      const from = location?.state?.from?.pathname || '/'
-     const {loginUser, googles,} = useContext(AuthContext)
+     const {loginUser, googles,gitHubLogin} = useContext(AuthContext)
      const navigate = useNavigate()
      const handelLogin=(event)=>{
           event.preventDefault();
@@ -31,6 +31,15 @@ const Login = () => {
                console.log(guser);
                navigate(from,{replace:true})
                setUser(guser)
+          })
+          .catch(err=>console.log(err))
+     }
+     const singInGithub = ()=>{
+          // console.log(' git hub login');
+          gitHubLogin()
+          .then(result=>{
+               const gitUser = result.user
+               console.log(gitUser);
           })
           .catch(err=>console.log(err))
      }
@@ -75,7 +84,7 @@ const Login = () => {
       </form>
       <div className="flex justify-evenly">
           <button className="btn btn-info" onClick={singGoogle }> SingIn Google</button>
-          <button className="btn btn-info">SingIn Github </button>
+          <button className="btn btn-info" onClick={singInGithub}>SingIn Github </button>
       </div>
     </div>
   );
