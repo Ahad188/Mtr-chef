@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { FaRegGem } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+ 
+ 
 import FoodCard from "../FoodCard/FoodCard";
 const Card = () => {
   const { id } = useParams();
@@ -23,9 +22,7 @@ const Card = () => {
      const p = chef.specialRecipes
      // FaRegGem
 
-     const favorite = ()=>{
-          toast('LIke Him');
-     }
+     
  
   return (
     <div className="container mx-auto mb-36">
@@ -51,10 +48,7 @@ const Card = () => {
             <Link to='/' className="btn btn-yellow-300">Go Home</Link>
           </div>
         </div>
-        <h3 className="mr-5">
-          <FaRegGem onClick={favorite} className="text-3xl mr-10 mt-10"/>
-          <ToastContainer></ToastContainer>
-        </h3>
+         
       </div>
       <div className="md:grid grid-cols-3 mt-5">
      {

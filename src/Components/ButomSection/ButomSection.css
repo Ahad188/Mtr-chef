@@ -1,0 +1,48 @@
+.contact{
+	background: #c1b6f0eb;
+	width: 64%;
+	margin: 100px auto;
+	padding: 70px 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 12px; 
+	background-size: cover;
+}
+.center h3{
+	font-size: 30px;
+	font-weight: 500;
+	margin-bottom: 3px;
+	color:rgb(228, 228, 59);
+}
+.center p{
+	 
+	line-height: 26px;
+	margin-bottom: 25px;
+}
+.contact .acton form input[type="email"] {
+	max-width: 100%;
+	width: 470px;
+	padding: 12px 15px;
+	 
+	border: none;
+	outline: none;
+	margin: 0 10px 20px 0;
+	border-radius: 30px;
+}
+.contact .acton form input[type="submit"] {
+	padding: 12px 40px;
+	 background-color: lightslategray;
+	 
+	border: none;
+	outline: none;
+	margin: 0 10px 20px 0;
+	border-radius: 30px;
+	cursor: pointer;
+}
+@media (max-width: 540px){
+	.contact .acton form input[type="email"] {
+		width: 300px;
+	}
+}
