@@ -13,7 +13,7 @@ const Popular = () => {
      // console.log(data);
      return (
           <section className='mt-10 container px-14 border mx-auto'>
-               <h2 className='text-center text-yellow-300 text-5xl mb-14 mt-5'> Our chef</h2>
+               <h2 className='text-center text-yellow-300 text-5xl mb-14 mt-5'> Mtr.Indian chef</h2>
                <div className='md:grid md:grid-cols-2 gap-5 mx-auto'>
                {
                     data.slice(0,6).map(card=><ChefCard

@@ -26,6 +26,15 @@ const WorldChef = () => {
             <p className="text-xl">Head chef london </p>
           </div>
         </div>
+        <div className="card card-compact w-96 bg-base-100 shadow-xl p-10">
+          <figure>
+            <img src={men3} alt="Shoes" />
+          </figure>
+          <div className="card-body text-center">
+            <h2 className="text-center text-4xl text-rose-400">Annel Serma</h2>
+            <p className="text-xl">Head chef london </p>
+          </div>
+        </div>
         {/*  */}
         <div className="card card-compact w-96 bg-base-100 shadow-xl p-10">
           <figure>

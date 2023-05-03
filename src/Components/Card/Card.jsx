@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
+import { FaRegGem } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Card = () => {
   const { id } = useParams();
 
@@ -15,12 +17,17 @@ const Card = () => {
         setChef(datA);
       });
   }, []); 
-//   const p = chef.specialRecipes
+ 
      const p = chef.specialRecipes
-//   console.log(p);
+     // FaRegGem
+
+     const favorite = ()=>{
+          toast('LIke Him');
+     }
+ 
   return (
     <div className="container mx-auto mb-36">
-      {/* <h1 className="text-5xl text-center">this is a single card </h1> */}
+  
 
       <div className="card lg:card-side bg-base-100 shadow-xl cursor-pointer">
         <figure>
@@ -34,19 +41,18 @@ const Card = () => {
                 <p className="text-xl mt-6">He almost {chef.numberOfRecipes} food beak in his life.He Indian first food and American fast food make it.   At ex ullam commodi officia odio magni incidunt corrupti. Consectetur, quod reiciendis minima ratione   </p>
 
                <h1 className="text-4xl mt-4 mb-2">Most Popular Food </h1>
-               {/* <li className="cursor-pointer text-xl">{p[0]}</li>
-               <li className="text-xl">{p[1]}</li>
-               <li className="text-xl">{p[2]}</li> */}
                {
                     p?.map(p1=> <li key={p1.index}>{p1}</li>)
                }
-              
-
            </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Listen</button>
+            <Link to='/' className="btn btn-yellow-300">Go Home</Link>
           </div>
         </div>
+        <h3 className="mr-5">
+          <FaRegGem onClick={favorite} className="text-3xl mr-10 mt-10"/>
+          <ToastContainer></ToastContainer>
+        </h3>
       </div>
     </div>
   );
