@@ -6,7 +6,6 @@ import Register from "../Components/Register/Register";
 import Blog from "../Components/Blog/Blog";
 import Allchef from "../Components/Allchef/Allchef";
 import Card from "../Components/Card/Card";
- 
 import Proctet from "../Proctet/Proctet";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
@@ -39,7 +38,7 @@ const router = createBrowserRouter([
                ,{
                     path:'/card/:id',
                     element:<Proctet><Card></Card></Proctet>,
-                    loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
+                    loader:({params})=>fetch(`https://chef-server-ahad188.vercel.app/food/${params.id}`)
                     
                }
           ]

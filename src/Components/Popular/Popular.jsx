@@ -6,7 +6,7 @@ import Allchef from '../Allchef/Allchef';
 const Popular = () => {
      const [data,setData] = useState([])
      useEffect(()=>{
-          fetch('http://localhost:5000/data')
+          fetch('https://chef-server-ahad188.vercel.app/data')
           .then(res=>res.json())
           .then(data=>setData(data))
      },[])
