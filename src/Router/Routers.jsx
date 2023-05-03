@@ -8,11 +8,13 @@ import Allchef from "../Components/Allchef/Allchef";
 import Card from "../Components/Card/Card";
  
 import Proctet from "../Proctet/Proctet";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
      {
           path:'/',
           element: <App></App>,
+          errorElement:<ErrorPage></ErrorPage>,
           children:[
                {
                     path:'/',
